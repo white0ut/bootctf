@@ -1,0 +1,13 @@
+{% macro link(endpoint, display, heading=False) -%}
+    <li {% if not heading and request.endpoint == endpoint -%} class="pure-menu-selected"
+    {%- endif %}><a href="{{ url_for(endpoint) }}">{{ display }}</a></li>
+{%- endmacro %}
+<header>
+    <div class="pure-menu pure-menu-open pure-menu-horizontal">
+        <a href="{{ url_for('index') }}" class="pure-menu-heading">BootCTF</a>
+        <ul>
+            {{ link('index', 'Index') }}
+            {{ link('challenges', 'Challenges') }}
+        </ul>
+    </div>
+</header>

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Challenges{% endblock title %}
+{% block body %}
+    {% include "header.html" %}
+    <div class="content">
+        <div class="pure-g">
+        {% for challenge in challenges %}
+            <div class="pure-u-1 pure-u-md-1-2">
+                <div class="chall">
+                    <h2>{{ challenge.name }}</h2>
+                    <p>{{ challenge.desc }}</p>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock body %}
